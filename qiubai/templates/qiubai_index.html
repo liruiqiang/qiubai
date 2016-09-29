@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>糗百笑话</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    {% for joke in p_jokes %}
+      <h3>{{joke.author}}</h3>
+      {% for joke_content in joke.content %}
+      <div>{{joke_content}}</div>
+      {% endfor %}
+      <ul>
+          {% for comment in joke.comments %}
+          <li>{{comment.comment_author}}:{{comment.comment_content}}</li>
+          {% endfor %}
+      </ul>
+      <hr />
+    {% endfor %}
+</body>
+</html>
